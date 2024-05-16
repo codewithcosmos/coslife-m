@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  /* Showcase Section Styles */
+  .showcase {
+    background-image: url(../assets/shocase/bg-image.jpg);
+    background-attachment: fixed;
+    padding: 100px;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  
+  .showcase > .top-heading {
+    padding: 1px 20px;
+    background-color: rgba(0, 0, 0, 0.58);
+    color: #13d456;
+    width: 200px;
+    font-size: 1.4em;
+    text-align: center;
+    border-radius: 5px;
+   }
+  
+   .showcase > .bottom-heading {
+    padding: 1px 18px;
+    margin-top: 15px;
+    background-color: rgba(50, 30, 0, 0.58);
+    color: #ffffff;
+    width: 120px;
+    text-align: center;
+    border-radius: 5px;
+     }
+  
+     /* Features section Styles */
+  
+     .features-section {
+      height: 400px;
+      background-image: url(../assets/shocase/service-bg.jpg);
+      background-color: #05e386;
+      border-top: 10px solid whitesmoke;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "ubuntu-condensed", sans-serif;
+      box-shadow: inset 0px -26px 79px -8px rgba(0, 0, 0, 0.58);
+  
+      background-position: center;
+      background-size: cover;
+     }
+  
+     .features-section > .columns-wrapper {
+      width: 1000px;
+      display: flex;
+     }
+  
+     .features-section .columns-wrapper > .column {
+      padding: 25px;
+      margin: 42px;
+      text-align: center;
+      border-bottom: 5px solid transparent;
+      border-radius: 10px;
+      transition: 1s;
+     }
+  
+     .features-section .columns-wrapper > .column:hover {
+        border-bottom: 5px solid #05e386;
+     }
+  
+     .features-section > .columns-wrapper > .column :nth-child(1) {
+       font-size: 3em;
+     }
+  
+     .features-section > .columns-wrapper > .column :nth-child(2) {
+      font-size: 1.5em;
+      font-weight: 900;
+      height: 50px;
+      transition: 1s;
+    }
+  
+    .features-section > .columns-wrapper > .column :nth-child(2):hover {
+      letter-spacing: 2px;
+    }
+  
+    .features-section > .columns-wrapper > .column :nth-child(3) {
+      letter-spacing: 1px;
+    }
+  
+  
+  

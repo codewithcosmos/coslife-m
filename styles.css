@@ -1,0 +1,153 @@
+body::before{
+    display: block;
+    content: "";
+  }
+  *
+  *::before,
+  *::after{
+    box-sizing: border-box;
+  }
+  /* ================================================================ */
+  /* NAVBAR STYLES Portfolio / Services and About */ 
+  .navbar {
+      background-color: rgba(0, 0, 0, 0.7); /* Adjust transparency as needed */
+    }
+    .navbar-dark .navbar-brand {
+      color: #fff; /* Brand text color */
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff; /* Menu item text color */
+    }
+  
+    .navbar a:hover {
+      border-bottom: 2px #0fe645 solid;
+    }
+    
+  
+    /* Custom styles for starry background */
+    .hero-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .hero-subtitle {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  
+    
+   /* ========================================================================== */
+       /* About Page */
+    /* Custom CSS for shadow effect and flip-up animation */
+    .card {
+      box-shadow: 0px 3px 15px rgba(119, 54, 54, 0.5); /* Red shadow effect */
+      transition: transform 0.3s ease-in-out;
+      border: 2px solid #ed1349; /* Border style */
+      padding: 8px; /* Padding for content */
+      text-align: center; /* Align text to center */
+      margin-right: 8px;
+    }
+    
+    .about-me img{
+      border: #13ed29;
+      border-radius: 40px 40px 0px;
+    }
+    
+    /* Hire  */
+    .hire-me{
+      box-shadow: 0px 3px 15px rgba(119, 54, 54, 0.5);
+      border: 2px solid #13ed29; 
+      border-radius: 20px;
+    }
+       
+      
+     h2, p {
+    text-align: center;
+   }
+  
+    /* Custom styles for hero section */
+    .hero-section {
+      background-color: #333436;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+  
+    .checkbox{
+      display: block;
+    }
+    .profile-picture {
+      width: 250px;
+      height: 250px;
+      border-radius: 255%;
+      margin-bottom: 20px;
+    }
+  
+    /* FOOTER */
+     /* Custom styles for footer */
+     footer {
+      background-color: #333;
+      color: #fff;
+      padding: 30px 0;
+    }
+    
+    .copyright-line {
+      margin-top: 20px;
+      border-top: 1px solid #fff;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+  
+   
+  
+    /* Form - Hire Me */
+    @media (min-width: 768px) {
+      .hire-input{
+        width: 75%;
+      }
+    }
+   
+    /* Contact Form */
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  
+   /* Custom styles */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* ================================================================= */
+  /* Services  */
+  .service{
+    background-image:url('images/website-img/services.png') ;
+    background-size: cover;
+    margin-top: 55px;
+    color: #f8f9fa;
+    font-size: larger;
+  }
+  .checkbox{
+    color: #0fe645;
+  }
+  
+      /* About Section */
+      .about-me{
+        background-color: #fffafa;
+        color: #f8f9fa;
+        align-items: center;
+      }
+      .jumbotron {
+        background-image: url('assets/blue-abstruct.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Adjust this value as needed */
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+  
+     
