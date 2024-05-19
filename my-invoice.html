@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoicing Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .invoice-form {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="invoice-form mt-5">
+            <h2 class="form-title">Invoice Details</h2>
+            <form>
+                <div class="form-group">
+                    <label for="invoiceNumber">Invoice Number</label>
+                    <input type="text" class="form-control" id="invoiceNumber" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="clientName">Client Name</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="Enter Client Name">
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Client Email</label>
+                    <input type="email" class="form-control" id="clientEmail" placeholder="Enter Client Email">
+                </div>
+                <div class="form-group">
+                    <label for="clientAddress">Client Address</label>
+                    <textarea class="form-control" id="clientAddress" rows="3" placeholder="Enter Client Address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="invoiceDate">Invoice Date</label>
+                    <input type="date" class="form-control" id="invoiceDate">
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" class="form-control" id="dueDate">
+                </div>
+                <div class="form-group">
+                    <label for="itemDescription">Item Description</label>
+                    <input type="text" class="form-control" id="itemDescription" placeholder="Enter Item Description">
+                </div>
+                <div class="form-group">
+                    <label for="itemQuantity">Item Quantity</label>
+                    <input type="number" class="form-control" id="itemQuantity" placeholder="Enter Item Quantity">
+                </div>
+                <div class="form-group">
+                    <label for="itemPrice">Item Price</label>
+                    <input type="number" step="0.01" class="form-control" id="itemPrice" placeholder="Enter Item Price">
+                </div>
+                <div class="form-group">
+                    <label for="totalAmount">Total Amount</label>
+                    <input type="number" step="0.01" class="form-control" id="totalAmount" placeholder="Enter Total Amount" readonly>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calculate Total</button>
+                <button type="submit" class="btn btn-success">Submit Invoice</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let invoiceNumber = localStorage.getItem('invoiceNumber');
+            if (!invoiceNumber) {
+                invoiceNumber = '000001';
+            } else {
+                invoiceNumber = (parseInt(invoiceNumber, 10) + 1).toString().padStart(6, '0');
+            }
+            document.getElementById('invoiceNumber').value = invoiceNumber;
+            localStorage.setItem('invoiceNumber', invoiceNumber);
+        });
+
+        function calculateTotal() {
+            const quantity = document.getElementById('itemQuantity').value;
+            const price = document.getElementById('itemPrice').value;
+            const total = quantity * price;
+            document.getElementById('totalAmount').value = total.toFixed(2);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

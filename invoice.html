@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Invoice</title>
+    <link rel="stylesheet" href="/path/to/your/invoice.css">
+</head>
+<body>
+    <!-- Your website's existing header and navigation -->
+
+    <div class="invoice-box" id="invoice">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="logo.png" alt="Company Logo" style="width:100%; max-width:300px;">
+                            </td>
+                            <td>
+                                Invoice #: <span id="invoiceNumber"></span><br>
+                                Date: <span id="date"></span><br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                <span id="companyName">Company Name</span><br>
+                                <span id="companyAddress">Address, City, ST, ZIP code</span><br>
+                                <span id="companyPhone">Phone number | Fax Number</span>
+                            </td>
+                            <td>
+                                Bill To:<br>
+                                <span id="billToName"></span><br>
+                                <span id="billToAddress"></span><br>
+                                <span id="billToPhone"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="heading">
+                <td>
+                    Item Description
+                </td>
+                <td>
+                    Amount
+                </td>
+            </tr>
+            <tbody id="items">
+                <!-- Items will be inserted here by JavaScript -->
+            </tbody>
+            <tr class="total">
+                <td></td>
+                <td id="subtotal">
+                    Subtotal: $0.00
+                </td>
+            </tr>
+            <tr class="total">
+                <td></td>
+                <td id="taxRate">
+                    Tax rate: $0.00
+                </td>
+            </tr>
+            <tr class="total">
+                <td></td>
+                <td id="additionalCosts">
+                    Additional costs: $0.00
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Your website's existing footer -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('https://your-deployed-nodejs-server.com/invoices/latest')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('invoiceNumber').innerText = data.invoiceNumber;
+                    document.getElementById('date').innerText = new Date(data.date).toLocaleDateString();
+
+                    document.getElementById('billToName').innerText = data.billTo.name;
+                    document.getElementById('billToAddress').innerText = `${data.billTo.address}, ${data.billTo.city}, ${data.billTo.state}, ${data.billTo.zip}`;
+                    document.getElementById('billToPhone').innerText = data.billTo.phone;
+
+                    const itemsContainer = document.getElementById('items');
+                    let subtotal = 0;
+                    data.items.forEach(item => {
+                        const itemRow = document.createElement('tr');
+                        itemRow.classList.add('item');
+                        itemRow.innerHTML = `
+                            <td>${item.description}</td>
+                            <td>$${item.amount.toFixed(2)}</td>
+                        `;
+                        itemsContainer.appendChild(itemRow);
+                        subtotal += item.amount;
+                    });
+
+                    document.getElementById('subtotal').innerText = `Subtotal: $${subtotal.toFixed(2)}`;
+                    // Add tax rate and additional costs if needed
+                })
+                .catch(error => console.error('Error fetching the invoice:', error));
+        });
+    </script>
+</body>
+</html>
