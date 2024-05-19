@@ -40,54 +40,125 @@
         </div>
     </nav>
 </section >
+ <section>
+    <header class="pt-3"> 
+        <div class="container pt-5">
+            <div class="card">
+                <img src="images/website-img/coslife..png" alt="Banner Image 1">
+            </div>
+        </div>
+    </header>
+ </section>
   <!-- END OF NAVBAR -->
-<!-- Quoation Form -->
-<div class="pt-5">
-    <h1>Website Quotation Form</h1>
-   </div>
-<form id="quotationForm">
-  <div class="form-group">
+
+<div class="container">
+    <!-- Quoation Form -->
+<form class="px-5 card" id="quotationForm">
+    <div class="bg-light pt-5">
+        <h1 class="pt-5 text-center">Quotation</h1>
+        <p><strong>What type of website do you need?</strong></p>
+       </div>
+  <div class="form-group pt-5">
+    <div>
+    </div>
     <label>
-      <input type="checkbox" name="websiteOptions" value="5000" onclick="calculateTotal()"> Basic Website 
+      <input type="checkbox" name="websiteOptions" value="5000" onclick="calculateTotal()"> <strong>Basic Website: </strong>
     </label>
+    <small>
+       Basic website typically includes a few essential pages such as Home, About, Services, and Contact. It serves as an online presence for individuals or small businesses, providing essential information about their offerings and contact details. Basic websites often use simple navigation and straightforward design, focusing on delivering content clearly and efficiently.
+    </small>
   </div>
-  <div class="form-group">
+  <div class="form-group pt-5">
     <label>
-      <input type="checkbox" name="websiteOptions" value="8000" onclick="calculateTotal()"> E-commerce Website
+      <input type="checkbox" name="websiteOptions" value="8000" onclick="calculateTotal()"> <strong>E-commerce Website:</strong>
     </label>
+    <small>
+        An e-commerce website is designed for selling products or services online. It includes features like product listings, shopping cart, checkout process, payment gateways, and customer account management. These websites are often more complex due to the need for secure transactions, inventory management, and user experience optimization to drive sales.
+    </small>
   </div>
-  <div class="form-group">
+  <div class="form-group pt-5">
     <label>
-      <input type="checkbox" name="websiteOptions" value="3000" onclick="calculateTotal()"> Blog 
+      <input type="checkbox" name="websiteOptions" value="3000" onclick="calculateTotal()"> <strong>Blog :</strong>
     </label>
+    <small>
+        A blog is a website or section of a website dedicated to publishing articles, stories, or posts on various topics. It typically includes features like categories, tags, comments, and an archive of past posts. Blogs are used for sharing opinions, news, tutorials, and personal experiences, and they often include multimedia elements such as images and videos.
+    </small>
   </div>
-  <div class="form-group">
+  <div class="form-group pt-5">
     <label>
-      <input type="checkbox" name="websiteOptions" value="4000" onclick="calculateTotal()"> Portfolio Website 
+      <input type="checkbox" name="websiteOptions" value="4000" onclick="calculateTotal()"> <strong>Portfolio Website:</strong>
     </label>
+    <small>
+        A portfolio website showcases an individual's or company's work, skills, and achievements. It includes sections like About, Projects, Services, and Contact. The focus is on visually appealing presentations of work samples, often using galleries or case studies. Portfolio websites are common among creatives such as designers, artists, and photographers.
+    </small>
   </div>
-  <div class="form-group">
+  <div class="form-group pt-5">
     <label>
-      <input type="checkbox" name="websiteOptions" value="6000" onclick="calculateTotal()"> Corporate Website 
+      <input type="checkbox" name="websiteOptions" value="6000" onclick="calculateTotal()"> <strong>Corporate Website:</strong>
     </label>
+    <small>
+        A corporate website represents a business or organization and serves as a hub for information about the company's history, mission, services, products, and contact details. It often includes sections like Home, About Us, Services, Products, News, and Contact. Corporate websites are designed to convey professionalism and establish trust with clients and partners.
+    </small>
   </div>
-  <div class="form-group">
+  <div class="form-group pt-5">
     <label>
-      <input type="checkbox" name="websiteOptions" value="2000" onclick="calculateTotal()"> Landing Page
+      <input type="checkbox" name="websiteOptions" value="2000" onclick="calculateTotal()"> <strong>Landing Page:</strong>
     </label>
+    <small>
+        A landing page is a standalone web page created specifically for marketing or advertising campaigns. Its purpose is to drive visitors to take a specific action, such as signing up for a newsletter, downloading a resource, or making a purchase. Landing pages are focused on a single goal and often include compelling headlines, clear calls to action, and minimal distractions.
+    </small>
   </div>
-  <div class="form-group">
+  <div class="form-group pt-5">
     <label>
-      <input type="checkbox" name="websiteOptions" value="1000" onclick="calculateTotal()"> Maintenance 
+      <input type="checkbox" name="websiteOptions" value="1000" onclick="calculateTotal()"> <strong>Maintenance:</strong>
     </label>
+    <small>
+        Website maintenance involves regular updates and checks to ensure the website runs smoothly, remains secure, and provides a good user experience. Here are key features involved in maintaining a website:
+    </small>
   </div>
-  <div class="form-group">
+  <div class="form-group p-5">
     <label for="promoCode">Promo Code:</label>
     <input type="text" id="promoCode" name="promoCode" oninput="calculateTotal()">
   </div>
-  <div class="total-cost" id="totalCost">Total Cost: R0</div>
+  <div class="total-cost" id="totalCost"><h4><strong>Total Cost: R0</strong></h4></div>
+  <div class="pt-5 lead">
+    <p><strong>Continue to form submition</strong></p>
+  </div>
 </form>
+</div>
 <!-- End Quoatation form -->
+<div class="container bg-light">
+    <h2 class="mt-5 pt-3">Quotation Form</h2>
+    <form class="card">
+        <div class="form-group">
+            <label for="name"><strong></strong></label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name"Required>
+        </div>
+        <div class="form-group pt-3">
+            <label for="email"><strong></strong></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email"Required>
+        </div>
+        <div class="form-group pt-3">
+            <label for="phone"></label><strong></strong>
+            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group pt-3">
+            <label for="service"><strong></strong></label>
+            <select class="form-control" aria-placeholder="" id="service"Required>
+                <option>Select your service</option>
+                <option>Web Development</option>
+                <option>Graphic Design</option>
+                <option>Digital Marketing</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <div class="form-group pt-5">
+            <label for="details"></label><strong>Project Details</strong >
+            <textarea class="form-control" id="details" rows="4" placeholder="Describe your project"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary pt-3">Submit</button>
+    </form>
+</div>
 
 <script>
     function calculateTotal() {
@@ -109,7 +180,7 @@
     
    <!-- FOOTER -->
    <section>
-    <footer class="py-2 bg-dark text-light text-center position-relative">
+    <footer class="py-3 px bg-dark text-light text-center position-relative">
      <div  class="container">
        <a href="#" class="position-absolute bottom-0 end-0 me-5">
          <i class="bi bi-arrow-up-circle h1"></i>
