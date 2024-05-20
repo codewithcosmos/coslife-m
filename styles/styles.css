@@ -7,7 +7,7 @@ body::before{
   *::after{
     box-sizing: border-box;
   }
-  /* ================================================================ */
+  /* ==================================================== */
   /* NAVBAR STYLES Portfolio / Services and About */ 
   .navbar {
       background-color: rgba(0, 0, 0, 0.7); /* Adjust transparency as needed */
@@ -122,17 +122,18 @@ body::before{
     background-color: #f8f9fa;
   }
   
-  /* ================================================================= */
+  /* ======================================================== */
   /* Services  */
   .service{
-    background-image:url('images/website-img/services.png') ;
+    background-image: url('images/website-img/services-png');
+    background-color: #2a35b0;
     background-size: cover;
     margin-top: 55px;
-    color: #f8f9fa;
+    color: #11bf9a;
     font-size: larger;
   }
   .checkbox{
-    color: #0fe645;
+    color: #35ccb0;
   }
   
       /* About Section */
@@ -142,7 +143,7 @@ body::before{
         align-items: center;
       }
       .jumbotron {
-        background-image: url('assets/blue-abstruct.jpg');
+        background-image: url('images/website-img/blue-abstruct.jpg');
         background-size: cover;
         background-position: center;
         height: 100vh; /* Adjust this value as needed */

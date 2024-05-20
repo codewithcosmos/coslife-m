@@ -13,8 +13,8 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
      <!-- CSS STYLES -->
-     <link rel="stylesheet" href="main.css">
-     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="styles/main.css">
+     <link rel="stylesheet" href="styles/styles.css">
     <!-- Google API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>  
 </head>
@@ -132,7 +132,7 @@
     <form class="card">
         <div class="form-group">
             <label for="name"><strong></strong></label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name"Required>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name"autofocus Required>
         </div>
         <div class="form-group pt-3">
             <label for="email"><strong></strong></label>
@@ -150,6 +150,12 @@
                 <option>Graphic Design</option>
                 <option>Digital Marketing</option>
                 <option>Other</option>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
             </select>
         </div>
         <div class="form-group pt-5">
