@@ -1,56 +1,62 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
-.invoice-box {
+
+.invoice-container {
     max-width: 800px;
-    margin: auto;
+    margin: 20px auto;
     padding: 20px;
-    border: 1px solid #eee;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    font-size: 16px;
-    line-height: 24px;
-    color: #555;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.invoice-header .logo {
+    width: 100px;
+    height: 100px;
     background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.invoice-box table {
+
+.invoice-header .company-info h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.invoice-details p, .invoice-summary p {
+    margin: 5px 0;
+}
+
+.invoice-table {
     width: 100%;
-    line-height: inherit;
-    text-align: left;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
-.invoice-box table td {
-    padding: 5px;
-    vertical-align: top;
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
 }
-.invoice-box table tr td:nth-child(2) {
+
+.invoice-table th {
+    background-color: #f4f4f4;
+}
+
+.invoice-summary {
     text-align: right;
 }
-.invoice-box table tr.top table td {
-    padding-bottom: 20px;
-}
-.invoice-box table tr.top table td.title {
-    font-size: 45px;
-    line-height: 45px;
-    color: #333;
-}
-.invoice-box table tr.information table td {
-    padding-bottom: 40px;
-}
-.invoice-box table tr.heading td {
-    background: #eee;
-    border-bottom: 1px solid #ddd;
-    font-weight: bold;
-}
-.invoice-box table tr.details td {
-    padding-bottom: 20px;
-}
-.invoice-box table tr.item td {
-    border-bottom: 1px solid #eee;
-}
-.invoice-box table tr.item.last td {
-    border-bottom: none;
-}
-.invoice-box table tr.total td:nth-child(2) {
-    border-top: 2px solid #eee;
-    font-weight: bold;
+
+footer {
+    text-align: center;
+    margin-top: 20px;
 }
