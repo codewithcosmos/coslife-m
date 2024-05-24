@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="invoice"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const service = params.get('service');
+            const cost = params.get('cost');
+
+            const invoiceDiv = document.getElementById('invoice');
+            const h1 = document.createElement('h1');
+            h1.textContent = `Invoice for ${service}`;
+            invoiceDiv.appendChild(h1);
+
+            const p = document.createElement('p');
+            p.textContent = `Service: ${service}`;
+            invoiceDiv.appendChild(p);
+
+            const p2 = document.createElement('p');
+            p2.textContent = `Cost: ${cost}`;
+            invoiceDiv.appendChild(p2);
+
+            const date = new Date().toLocaleDateString();
+            const p3 = document.createElement('p');
+            p3.textContent = `Date: ${date}`;
+            invoiceDiv.appendChild(p3);
+        });
+    </script>
+</body>
+</html>

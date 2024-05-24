@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     invoiceDateElement.textContent = getCurrentDate();
 
     // Sample invoice items
-    const invoiceItems = [
-        { description: 'Item 1', amount: 100.00 },
-        { description: 'Item 2', amount: 200.00 },
-        { description: 'Item 3', amount: 150.00 }
-    ];
+    // const invoiceItems = [
+    //     { description: 'Item 1', amount: 100.00 },
+    //     { description: 'Item 2', amount: 200.00 },
+    //     { description: 'Item 3', amount: 150.00 }
+    // ];
 
     const invoiceItemsContainer = document.getElementById('invoiceItems');
     let subtotal = 0;

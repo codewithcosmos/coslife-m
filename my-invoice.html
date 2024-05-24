@@ -94,6 +94,14 @@
             document.getElementById('invoiceNumber').value = invoiceNumber;
             localStorage.setItem('invoiceNumber', invoiceNumber);
         });
+    // Function to get the current date in YYYY-MM-DD format
+        function getCurrentDate() {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+        }
 
         function calculateTotal() {
             const quantity = document.getElementById('itemQuantity').value;
@@ -102,6 +110,8 @@
             document.getElementById('totalAmount').value = total.toFixed(2);
         }
     </script>
+    <!-- This link will get the automated invoice number and date from invoice.js
+   <script src="invoice.js"></script> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
