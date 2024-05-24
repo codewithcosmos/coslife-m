@@ -27,6 +27,33 @@ document.addEventListener('DOMContentLoaded', () => {
     //     { description: 'Item 2', amount: 200.00 },
     //     { description: 'Item 3', amount: 150.00 }
     // ];
+    document.addEventListener('DOMContentLoaded', () => {
+        const fetchButton = document.getElementById('fetch-products');
+        const productList = document.getElementById('product-list');
+    
+        fetchButton.addEventListener('click', async () => {
+            try {
+                const response = await fetch('http://localhost:5000/products');
+                const products = await response.json();
+    
+                productList.innerHTML = ''; // Clear existing products
+    
+                products.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+                    productDiv.innerHTML = `
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <p><strong>Price:</strong> $${product.price}</p>
+                    `;
+                    productList.appendChild(productDiv);
+                });
+            } catch (err) {
+                console.error('Error fetching products:', err);
+            }
+        });
+    });
+    
 
     const invoiceItemsContainer = document.getElementById('invoiceItems');
     let subtotal = 0;
